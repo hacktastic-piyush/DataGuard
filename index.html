@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataGuard // Secure Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <h1>DATAGUARD</h1>
+                <span class="tagline">SECURE_ENCLAVE_V1.0</span>
+            </div>
+            <div class="system-stats">
+                <button id="logoutBtn" style="background:transparent; border:1px solid #444; color:#444; font-size:10px; cursor:pointer; padding:5px;">TERMINATE_SESSION</button>
+            </div>
+        </header>
+
+        <section class="terminal-box green-border">
+            <div class="unit-label">UNIT_01: INBOUND_ANALYSIS</div>
+            <div id="scanner" class="hidden">
+                <div class="scan-line"></div>
+                <div class="scan-text">SCANNING_PAYLOAD...</div>
+            </div>
+            <textarea id="userInput" placeholder="[INPUT DATA FOR STORAGE]"></textarea>
+            <button id="submitBtn">RUN_SANDBOX</button>
+            <div id="responseOutput" class="output hidden"></div>
+        </section>
+
+        <section class="terminal-box blue-border">
+            <div class="unit-label">UNIT_02: VAULT_EXTRACTION</div>
+            <div class="fetch-group">
+                <input type="text" id="fetchId" placeholder="ENTER_UNIQUE_RECORD_ID">
+                <button id="decryptBtn">EXTRACT</button>
+            </div>
+            <div id="decryptionWindow" class="hidden">
+                <div class="window-header">DECRYPTED_VIEW</div>
+                <div id="decryptedContent" class="content"></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="log-stream">> SYSTEM_STABLE // CLOUD_SYNC_ACTIVE</div>
+        </footer>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+:root {
+    --primary-green: #00ff41;
+    --primary-blue: #00d4ff;
+    --bg-black: #050505;
+    --terminal-grey: #0f0f0f;
+    --threat-red: #ff3e3e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-black);
+    color: #888;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.container { width: 100%; max-width: 800px; }
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+    header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+}
+
+h1 { color: var(--primary-green); margin: 0; letter-spacing: 4px; font-size: 1.8rem; }
+.tagline { font-size: 10px; color: #444; }
+
+.terminal-box {
+    background: var(--terminal-grey);
+    padding: 25px;
+    position: relative;
+    margin-bottom: 25px;
+    border: 1px solid #222;
+}
+
+.green-border { border-left: 4px solid var(--primary-green); }
+.blue-border { border-left: 4px solid var(--primary-blue); }
+
+.unit-label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--bg-black);
+    padding: 0 10px;
+    font-size: 10px;
+    color: #666;
+}
+
+input, textarea {
+    width: 100%;
+    background: #000;
+    border: 1px solid #222;
+    color: var(--primary-green);
+    padding: 12px;
+    outline: none;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-family: monospace;
+    transition: 0.2s;
+    background: var(--primary-green);
+    color: #000;
+}
+
+button:hover { opacity: 0.8; }
+
+.auth-links { margin-top: 15px; font-size: 11px; text-align: center; }
+.auth-links a { color: var(--primary-blue); text-decoration: none; }
+
+.hidden { display: none !important; }
+
+#scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-line {
+    width: 100%;
+    height: 2px;
+    background: var(--primary-green);
+    position: absolute;
+    animation: scan 2s infinite linear;
+}
+
+@keyframes scan { 0% {top: 0%} 100% {top: 100%} }
+
+.output {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px dashed #333;
+    font-size: 13px;
+    background: #000;
+}
